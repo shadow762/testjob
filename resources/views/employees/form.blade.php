@@ -6,6 +6,7 @@
  * Time: 10:37
  */
 ?>
+<section class="employee-form">
 {!! Form::model($employee, ['route' => 'employee.save', 'enctype' => "multipart/form-data"]) !!}
     {!! Form::hidden('id') !!}
     <div class="form-item">
@@ -43,3 +44,5 @@
         {!! link_to_route('default', 'Отмена') !!}
     </div>
 {!! Form::close() !!}
+</section>
+<link rel="stylesheet" href="{{asset('css/app.css')}}">

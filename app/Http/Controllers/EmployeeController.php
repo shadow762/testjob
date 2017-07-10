@@ -114,7 +114,7 @@ class EmployeeController extends Controller
                 }
             });
         }
-        $employees = $employees->paginate(5);
+        $employees = $employees->paginate(5, array('*'), 'page', $request->page ? $request->page : null);
 
         foreach($employees as $key=>$employee) {
             $employee->bithday = Carbon::now()->diffInYears(Carbon::parse($employee->bithday));
@@ -135,7 +135,7 @@ class EmployeeController extends Controller
 
     }
 
-    public function delete() {
-
+    public function delete(Request $request) {
+        Employee::destroy($request->id);
     }
 }

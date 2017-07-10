@@ -53,10 +53,18 @@ const app = new Vue({
     },
     methods: {
         get_employees: function(page = null) {
-            this.$http.post('/employee/get' + (page ? ('/?page=' + page) : ''), this.options).then(response => {
+            this.options.page = page ? page : null;
+            this.$http.post('/employee/get' /*+ (page ? ('/?page=' + page) : '')*/, this.options).then(response => {
                 this.employees = response.data.data.data;
                 this.pagination = response.data.pagination;
             })
+        },
+        deleteEmployee: function(id) {
+            if(confirm('Вы уверены, что хотите удалить сотрудника?')) {
+                this.$http.post('/employee/delete', {'id': id}).then(response => {
+                    this.get_employees();
+                })
+            }
         }
     }
 });

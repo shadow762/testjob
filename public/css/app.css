@@ -7739,4 +7739,13 @@ table td.male {
   border-right: 1px solid black;
 }
 
+.employee-form {
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
 /*# sourceMappingURL=app.css.map */

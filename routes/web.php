@@ -15,4 +15,4 @@ Route::get('/', ['as' => 'default', 'uses' => 'EmployeeController@index']);
 Route::get('/employee/form/{id?}', ['as' => 'employee.form', 'uses' => 'EmployeeController@getForm']);
 Route::post('/employee/save', ['as' => 'employee.save', 'uses' => 'EmployeeController@save']);
 Route::post('/employee/get', ['as' => 'employee.get', 'uses' => 'EmployeeController@get']);
-Route::post('/employee/delete/', ['as' => 'employee.delete', 'uses' => 'EmployeeController@delete']);
+Route::post('/employee/delete', ['as' => 'employee.delete', 'uses' => 'EmployeeController@delete']);

@@ -42,7 +42,7 @@
                     <td>@{{ employee.surname }} @{{ employee.name }} @{{ employee.lastname }}</td>
                     <td>@{{ employee.bithday }} лет</td>
                     <td :class="employee.sex.name == 'Жен.' ? 'female' : 'male'">@{{ employee.sex.name }}</td>
-                    <td><a :href="employee.edit_link">Ред</a>, <a :href="employee.delete_link">удал</a></td>
+                    <td><a :href="employee.edit_link">Ред</a>, <a @click.prevent="deleteEmployee(employee.id)" :href="employee.delete_link">удал</a></td>
                 </tr>
         </tbody>
     </table>
