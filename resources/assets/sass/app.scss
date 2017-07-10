@@ -1,0 +1,68 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+#employees{
+  padding: 20px;
+  .employee-thumb{
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    .employee-image{
+      position: absolute;
+      top: 100%;
+      left:0;
+      border:7px solid black;
+      display: none;
+      background: #fff;
+      z-index: 10;
+    }
+    &:hover{
+      .employee-image{
+        display: block;
+        img{
+          max-width: 200px;
+          max-height: 200px;
+        }
+      }
+    }
+  }
+}
+fieldset{
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+table{
+  border-collapse: collapse;
+  thead{
+    font-weight: 600;
+  }
+  td{
+    padding: 7px;
+    &.female{
+      color: #ff0bd9;
+    }
+    &.male{
+      color: #0b70c5;
+    }
+  }
+}
+.pagination>li{
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-right: none;
+  cursor: pointer;
+  text-decoration: underline;
+  &:last-child{
+    border-right: 1px solid black;
+  }
+}
